@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--
+Trident内核：IE
+Gecko内核：火狐
+Webkit内核：Safari，Chrome
+Presto内核，Blink内核：Chrome，Opera
+
+
+
+<meta charset="UTF-8"/> 元信息标签
+块级标签：
+<div></div> 布局层标签，无实际意义，块级元素，可以设置行高等
+<pre></pre> 预格式化文本，保留空格和换行符，文本呈现等宽字体
+<hx></hx> 标题标签，从1-6逐渐变大
+<address></address> 为网页加入地址信息
+<p class="" title="" id="" name="" ></p> 段落标签，自动换行, class代表的是类，title是鼠标点上去的显示文字,name 方便搜索引擎搜索
+<hr> 水平线标签
+<ul>   无序列表
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<ol>   有序列表
+    <li></li>
+    <li></li>
+    <li></li>
+</ol>
+
+<form name="" action="" method="get"></form> name是表单名称   action是表单数据提交的地方，如果是#则表示提交到当前的文件下，method是前端提交数据到后端的方式一般是get和post
+<input type="text">
+    type="text"普通文本;placeholder 提示, minlength,maxlength最少最多输入字符数量，value初始值, readonly只读,disabled失效, pattern 正则匹配
+    "password"密码字段;
+    "submit"提交表单数据至表单处理处程序按钮;
+    "image"定义图片提交按钮;
+    "radio"定义图片单选按钮;checked{boolean}
+    "checkbox"定义复选框;
+    "button"定义普通按钮;
+    "reset"定义重置按钮;
+    "file"定义文件框;
+
+<textarea name="" id="" col="10" rows="10" placehold="" required=""></textarea>多行文本框
+
+<label for="sex">性别</label>
+    <select id="sex" multiple size="10"> ,multiple 是多选 size是选择列项数
+        <option value="male">男</option>
+        <option value="female">女</option>
+    </select>
+
+<button id="">确定</button>
+
+<iframe src="" frameborder=""><iframe>将多个网页组合在一起，不推荐使用
+
+<table border="1" cellpadding="100" cellspacing=100px> border表格边框,cellpadding设置单元格距离，cellspacing设置像素间距,
+    <caption>为表格添加标题和摘要</caption>
+        <thead>
+            <tr>表格一行
+                <th></th>表头
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>表格一行
+                <td rowspan="2"></td> rowspan单元格跨行
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>表格一行
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>表格一行
+                <td colspan="3"></td> rowspan单元格跨行
+
+            </tr>
+        </tbody>
+
+        <tfoot>
+
+        </tfoot>
+</table>
+
+
+
+
+行级标签：
+<q></q> 引用，为文本自动添加引号
+<br> 换行标签
+<a href="https://baidu.com" title:"百度“ target="_blank"> 超文本连接标签   target是点击后跳转的目标，_blank是创建一个新的标签页,_self是本身跳转到目标的标签页
+<img src="" alt="">  图片标签  alt是图片加载不出来显示的文字
+<span></span> 布局标签，无实际意义，与div相似，但是不单独占一行，行级元素，不能设置行高等
+<b></b> 加粗
+<strong></strong> 加粗并告知搜索引擎强调的内容
+<i></i> 斜体
+<em></em> 斜体并告知搜索引擎强调内容
+<small></small> 定义小型文本
+<sub></sub> 定义下标
+<sup></sup> 定义上标
+
+
+
+
+
+
+
+
+html实体转义符
+&lt <
+&gt >
+&amp &
+&nbsp 空格
+&copy ©
+&times ×
+&divide ÷
+
+
+
+-->
+
+
+
+<html lang="en">
+<style>
+    #p1{
+        top:1000px;
+        align:center;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Class 1 test</title>
+</head>
+<body>
+
+
+
+<P id="p1" name="123" title ="study1" align=center>study</P>
+
+<table border="1" cellpadding="10" cellspacing=10px align="center" valign=center>
+    <caption>numbertable</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td colspan="3">9</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">10</td>
+            </tr>
+        </tfoot>
+</table>
+
+<p width=100px><img src="background.jpg" alt="图片"></p>
+
+<form action="class2-html浮动.html" method="get">
+    <input type="text" title="name" placeholder="输入一个数字" >
+    <input type=submit>
+</form>
+
+<input type="radio" name="sex" checked>男人
+<input type="radio" name="sex">女人
+<input type="file">
+
+<label for="sex">性别</label>
+    <select id="sex" multiple>
+        <option value="male">男</option>
+        <option value="female">女</option>
+    </select>
+
+
+</body>
+
+</html>

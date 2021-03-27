@@ -1,0 +1,184 @@
+/*
+内联样式：在html中<p style="fontsize:10px;color=red;">123</p>
+内部样式表：在html中
+<style>
+    p{
+        fontsize:10px;
+        color:red;
+    }
+</style>
+外部样式：引入css表：在html中使用
+    <link rel="stylesheet" href="class1.css">
+导入外部样式：在html中
+<style>
+    @import "class1.css"
+</style>
+
+注：当多种样式同时对一个元素起作用时，优先级为（内联样式）>（内部样式）>（外部样式）
+
+
+
+
+
+
+①通配符选择器：
+    *{
+        width:100%
+    }
+    选择html中所有元素
+
+
+②标签选择器：
+    p{
+        color:red;
+        font-size:36px;
+        font-style:italic;
+        display:block;
+    }
+    选择对应的标签的元素
+
+
+
+③类选择器：
+    .box{
+
+    }
+    选择对应类的元素
+
+
+④id选择器：
+    #content{
+
+    }
+    选择对应id的元素
+
+
+
+⑤派出选择器：
+    .box p {
+
+    }
+    选择标签嵌套的标签的元素
+
+
+⑥*伪类选择器：
+    a:link{
+
+    }
+    a:visited{
+
+    }
+    a:hower{
+
+    }
+    a:active{
+
+    }
+    input:focus{
+
+    }
+    p:first-child(last-child,nth-child){
+
+    }
+
+⑦*属性选择器： 标签[]：
+    p[属性名]:包含有指定属性名的元素
+    p[属性名=值]:属性名为指定值的元素
+    div[属性名~=值]:属性名的值包含指定元素
+    span[属性名^=值]:属性名的值以指定值开头的元素
+    img[属性名$=值]:属性名的值以指定值结尾的元素
+
+⑧*关系选择器：
+p span{
+
+}
+选择后代
+<p>123<span>45</span>67</p>
+
+p>span{
+
+}
+选择儿子
+<p>123<span>45</span>67<div><span>45</span></div></p>
+只能选择前面的span
+
+p li+li+li{
+
+}
+选择兄弟
+
+
+
+
+对于选择器来说
+！impotent加在样式属性值后权重为10000
+内联样式权重为1000
+id选择器权重为100
+类，伪类选择器权重为10
+标签选择器权重为1
+最终标签的权重由这些组合，更大的体现出样式
+
+
+将选择器并列可以分组
+    p, .box, #content, .box p{
+
+    }
+
+样式继承：
+    .text{
+        font-size:10px;
+    }
+    .text span{
+        color:red;
+    }
+    <div class="text">1234<span>56</span></div>
+    嵌套的标签可以继承之前的选择器的样式
+
+
+
+
+
+CSS字体字段：
+    font-size:文本大小
+    font-family:Courier,"Courier New".monospace 文本字体
+    font-style:文字格式（斜体等）
+    font-weight:文字加粗
+    line-weight:文字行高
+    color:颜色
+    text-decoration:文字修饰
+    text-align:文字对齐
+    text-transform:capitalize单词第一个转化为大写,uppercase转换成大写,lowercase转换成小写。字母大小写
+    text-indent:文本缩进
+    font复合写法
+
+CSS背景：
+    background-color:
+    background-image:
+    background-repeat:repeat默认纵向横向平铺，no-repeat不平铺，repeat-y，repeat-x图像纵向横向平铺。背景图像铺排方式
+    background-position:背景图像位置
+    background-attachment:scroll默认,fixed滚动不变背景图像滚动位置
+    background复合写法
+
+css伪元素：创建不在文档树中的元素例如
+    p:before{
+
+    }
+    为文档前面添加内容及样式
+
+
+
+
+
+
+
+*/
+
+
+
+p{
+    background: azure;
+    font-size: 36px;
+    font-style: italic;
+    diplay:block;
+
+}

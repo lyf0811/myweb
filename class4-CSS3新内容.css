@@ -1,0 +1,147 @@
+/*
+CSS3属性前缀
+    IE:-ms-
+    Chrome和Safari：-webkit-
+    Firefox：-moz-
+    Opera：-o-
+
+
+
+CSS3选择器：
+    1.属性选择器
+    2.结构性伪类
+        匹配<html></html>标签
+        :root{
+
+        }
+
+        子元素选择
+        :first-child;:last-child;:nth-last-child(n);:nt h-child(n){
+
+        }
+
+        only-child:父元素仅有一个子元素   例如<div><p>1233444</p></div>  p:only-child{} p是其父元素div的唯一子元素
+        only-of-type:父元素中仅有一个兄弟元素  例如<div><p>1233444</p></div>和<div><p>1233444</p><p>1233444</p></div> p:only-of-type{}
+                                           这样后者就不会被选择到，因为div中有两个p标签，他们互为兄弟
+        empty:没有元素，包含文本元素，即查找空元素
+    3.目标伪类
+        :target匹配URL指向的元素
+    4.UI元素（表单）状态伪类
+        input:disabled{}选择所有input标签中含有disabled属性的元素
+        input:checked{}选择所有input标签中含有checked属性的元素(只在Opera浏览器中有效）
+        select::selection{}匹配select标签中被用户选中的部分
+        ::selection{}被用户选中的部分
+    5.否定伪类
+        :not(p)对所有不是p的标签
+    6.通用兄弟元素选择器
+        .div1~.div2{}寻找div1的兄弟元素div2
+
+
+
+CSS3文本处理：
+    1.文本阴影
+        text-shadow:h-shadow（水平偏移，数字） v-shadow（垂直偏移，数字） blur（模糊，数字） color（颜色）inset/outset
+    2.文本自动换行
+        word-wrap:normal(在断点处换行）,break-word（在长单词或url内部换行）
+    3.单词拆分
+        word-break:normal,break-all,keep-all(半角空格或连字符换行）
+    4.文本拆分
+        text-wrap:normal.....
+    5.文本溢出
+        单行文本溢出
+            text-overflow:clip（修剪文本）,ellipsis（修剪文本并用省略号代替修剪部分）,string（修剪文本并用给定符号代替修剪部分）
+        多行文本溢出 ie9以下版本不支持
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:行数;
+            overflow:hidden;
+
+CSS3边框
+    1.圆角边框                  2个参数       3个参数          4个参数
+        border-radius: 左上右下  右上左下/左上 右上左下 右下 /左上 右上 左下 右下
+        border-top-left-radius/border-top-right-radius/border-bottom-left-radius/border-bottom-right-radius/
+    2.边框阴影
+        box-shadow:h-shadow（水平偏移） v-shadow（垂直偏移） blur（模糊） color（颜色）inset/outset
+    3.边框图片（ie11以上支持）
+        border-image:source(图片路径） slice（图片边框向内偏移动，数字） width（图片边框宽度，数字） outset（边框图像超过边框的量，数字） repeat（图片是否平铺，round铺满/strech拉伸/repeat平铺）
+
+
+
+CSS3背景
+    1.多重背景
+        background: color(背景颜色） image(背景图片,url("")） repeat(平铺方式,repeat/no-repeat/round/strech) position(位置,数字 数字)      color(背景颜色） image(背景图片） repeat(平铺方式) situation(位置)……
+    2.背景属性
+        background-size: 200px 200px/50 %100%/cover/contain
+        background-origin(背景的位置):padding-box(内边距）/border-box（边框）/content-box（内容框）
+        background-clip（背景超出部分的裁剪位置):padding-box/border-box/content-box
+
+
+
+
+CSS3颜色
+    1.rgba（r，g，b，a）red，green，blue，alpha（不透明度）   r，g，b取值都是0-255/0-100%     a是0-1
+    2.hsl（h，s，l）h色调 0-360 ，s饱和度 0-100% ，l亮度 0-100%
+    3.hsla（h，s，l，a）h色调 0-360 ，s饱和度 0-100% ，l亮度 0-100% ， a不透明度 0-1
+
+
+
+CSS3 opacity:0-1(调整元素不透明度）ie8以上支持
+        ie8以下 filter:alpha(opacity=数值)(0-100)
+
+
+
+CSS3线性渐变
+    background: linear-gradient(direction,color-stop1,color-stop2,……)
+        direction:to left/to right/to top/to bottom/to top left/to top right/to bottom left/to bottom right/ 30deg……
+
+CSS3径向渐变
+    backgroung: radial-gradient(shape size, position,start-color,……,last-color)
+        shape:
+            ellipse椭圆径向渐变，默认
+            circle圆径向渐变
+        size:
+            farthest-corner渐变半径长度为圆心到圆心最远的角，默认
+            closest-side渐变半径长度为从圆心到圆心最近的边
+            closest-corner渐变半径长度为圆心到圆心最近的角
+            farthest-side渐变半径长度为从圆心到圆心最元的边
+        position:
+            center
+            top
+            bottom
+            at xpx ypx（设置圆心横坐标，纵坐标
+
+CSS3文字渐变
+    通过背景渐变，然后把非文字背景去除即可
+
+
+
+CSS3 box-sizing:content-box/border-box
+
+*/
+
+
+div[class=real] p{
+    height: 600px;
+
+}
+    p:target{
+    background: red ;
+    background: linear-gradient(135deg,green 80%,blue 20%);
+
+}
+
+.div1~.div2{
+    background: blue;
+}
+
+h1{
+    text-shadow:2px 3px 5px;
+}
+
+
+.div3:hover{           /*鼠标悬停效果*/
+    background: blue;
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

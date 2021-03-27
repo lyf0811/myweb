@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+
+jQuery load():
+    $(selector).load(URL,data,callback);
+        可选的 callback 参数规定当 load() 方法完成后所要允许的回调函数。回调函数可以设置不同的参数：
+            responseTxt - 包含调用成功时的结果内容
+            statusTXT - 包含调用的状态
+            xhr - 包含 XMLHttpRequest 对象
+                $("button").click(function(){
+                     $("#div1").load("demo_test.txt",function(responseTxt,statusTxt,xhr){
+                    if(statusTxt=="success")
+                      alert("外部内容加载成功！");
+                    if(statusTxt=="error")
+                      alert("Error: "+xhr.status+": "+xhr.statusText);
+                      });
+                    });             load() 方法完成后显示一个提示框。如果 load() 方法已成功，则显示“外部内容加载成功！”，而如果失败，则显示错误消息：
+
+
+
+jQuery $.get() 方法
+    $.get(URL,callback); 方法通过 HTTP GET 请求从服务器上请求数据。
+        $("button").click(function(){
+          $.get("demo_test.asp",function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+        });  用 $.get() 方法从服务器上的一个文件中取回数据：
+
+
+jQuery $.post() 方法
+    $.post(URL,data,callback);  方法通过 HTTP POST 请求从服务器上请求数据。
+        $("button").click(function(){
+              $.post("demo_test_post.asp",
+              {
+                name:"Donald Duck",
+                city:"Duckburg"
+              },
+              function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+              });
+            });  使用 $.post() 连同请求一起发送数据：
+
+
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>

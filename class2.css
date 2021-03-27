@@ -1,0 +1,66 @@
+/*
+
+
+CSS浮动:让块级标签不独占一行，可以将多个块级标签排在同一行中（让文档脱离文档流，不占用标准流）
+float：left左浮动；right右浮动；none默认值；inherit从父元素继承的float值
+
+清除浮动：clear：left，right，both，none
+或者在外围标签中的属性中加入overflow：hidden，这样在外围标签之外的块级元素就会自动转行了
+
+
+CSS盒子模型magin（外边距）-border（边框）-padding（内边距)
+magin-left,right,top,bottom分别设置，
+也可以magin: 10px 20px 30px 40px统一设定(上右下左顺讯）  只有一个时认定为上下左右都为该数字，两个时表示上下，左右为，三个时表示上，下，左右顺讯为
+
+padding与magin一样
+border-width,border-style,border-color
+
+CSS盒子尺寸为宽度=width+left,rightpadding+left,rightborder
+高度=height+top,bottompadding+top,bottomborder
+
+display属性
+display:none（不显示元素）
+display:block（块显示，可以将行级标签转化为块级）、
+display:inline（行内显示，可以将块级标签转化为行）
+display:inline-block（将块级，行级标签转化为行内块级标签，即可以设置宽高的块级标签，但不独占一行）
+
+自定义列表：
+    <dl>
+        <dt></dt>
+        <dd></dd>
+        <dd></dd>
+        <dd></dd>
+    </dl>
+
+
+
+
+*/
+.one{
+    float:left;
+    background: blue;
+    width: 100px;
+    height: 150px;
+    text-align: center;
+
+}
+.two{
+    float:left;
+    background: aqua;
+    width: 400px;
+    height: 200px;
+
+}
+.whole{
+    background: azure;
+    width: 500px;
+    margin:0 auto;
+    overflow:hidden;
+    height: 200px;
+    padding: 20px;
+}
+.clear{
+    clear:both;
+
+    /*清除浮动，通过*/
+}

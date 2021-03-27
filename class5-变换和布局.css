@@ -1,0 +1,162 @@
+/*
+变形transform：
+    1.translate(x,y)位移 x方向位移和y方向位移，只有一个参数时代表x方向位移
+      translateX(n)
+      translateY(n)
+    2.scale(x,y) 缩放
+      scaleX(n)
+      scaleY(n)
+    3.rotate(angle)旋转  angle为角度
+    4.skew(x-angle,y-angle)倾斜转换 扭曲
+      skewX(angle)
+      skewY(angle)
+    5.matrix(a,b,c,d,e,f)定义2d转换  a，b表示x轴，c，d表示y轴   e，f表示z轴
+        其原理与图形变换相似
+        a c e        其中a d表示缩放
+        b d f           b c表示扭曲
+        0 0 1           e f表示位移
+
+        表示旋转时              表示扭曲时
+        a=cosα                b=tanα1
+        b=sinα                c=tanα2
+        c=-sinα
+        d=cosα
+
+        当出现旋转，扭曲与前面的缩放位移等，需要将多个矩阵相乘
+
+
+transform-origin:x-asis y-asis z-asis   修改变换的基点，x，y，z-asis可以是具体的坐标点，也可以是left，top 等
+
+perspective:number(100px)/none:
+    大多浏览器不支持
+transform-style:flat(子元素不保留3d位置/preserve-3d（子元素保留……:
+
+rotateX
+rotateY
+rotateZ
+按照三维坐标进行旋转
+
+transition-property
+transition-duration动画持续时间
+transition-timing-function动画函数
+    linear匀速
+    ease变速
+    ease-in变速，慢到快
+    ease-out变速，快到慢
+    ease-in-out变速，慢速开始慢速结束
+transition-delay动画延迟时间
+
+transtion: property  duration  timeingfunction  delay
+
+
+
+
+
+animation 帧动画
+    @keyframes name{
+        0%:{
+
+        }
+        25%:{
+
+        }
+        ……
+        100%:{
+
+        }
+    }
+
+
+
+animation-name
+animation-duration
+animation-timing-function
+animation-delay
+animation-iteration-count
+animation-direction
+animation-play-state
+
+
+
+
+CSS3弹性布局
+    displaye:flex/inline-flex
+    弹性元素在弹性容器内一行显示，且默认每个容器只有一行
+    例如多个div标签在弹性容器中就在一行中显示，而不换行
+
+    flex-direction（布局方向）:row(横向从左到右排列/row-reverse（横向从右到左/column（从上到下/column-reverse（从下到上
+        应用于父元素 ，弹性容器
+    justify-content（主轴线对齐，X轴）:flex-start(紧凑左对齐/flex-end紧凑右对齐/center紧凑居中对齐/space-between除第一个和最后一个，其他元素子元素等分空白区/space-around所以子元素等分空白区
+        应用于父元素，弹性容器
+    align-items（纵轴对齐，Y轴）:flex-start(顶端对齐/flex-end底端对齐/center纵轴居中对齐/baseline纵轴基线对齐/strech纵向拉伸对齐
+        应用于父元素，弹性容器
+    flex-grow(子元素放大比例）:number
+        应用于子元素
+
+    flex:flex-grow(放大） flex-shrink（收缩比例，拉动窗口的时候） flex-basis（基本宽度）  或者auto/initial/none/inherit
+        flex一般带1-3个参数，1个参数时，无单位则代表flex-grow，带单位则代表flex-basis
+                          2个参数时，第一个是无单位参数代表flex-grow  第二个参数如果无单位则代表flex-shrink ，带单位则代表flex-basis
+        其中auto等价于 1 1 auto
+           initial等价于 0 1 auto
+           none 等价于 0 0 auto
+           inherit从父元素继承
+
+CSS3响应式布局
+    只需要一套代码，使得网页能够展示在不同分辨率的终端上
+        1.设置meta标签
+            <meta name="viewport" content=" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        2.处理图片缩放
+
+        3.其他属性处理   例如pre/iframe/video
+
+    媒体查询
+        方法一：
+            1.设置meta标签
+                <meta name="viewport" content=" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                    viewport:移动端窗口
+                    initial-scale初始缩放比例
+                    maximum-scale允许用户缩放到的最大比例
+                    minimum-scale
+                    user-scalable用户是否允许手动缩放
+            2.设置ie渲染方式为最高
+                <meta http-equiv="x-ua-compatible" content="IE=Edge,chrome=1">
+                如果浏览器有chrome插件，将以chrome的v8引擎渲染页面，否则以ie最高版本渲染
+            3.引入兼容的JS文件
+                ie8及以下不支持html5和css3所以要引入兼容
+                <script src="https://oss.maxcdn.cm/libs/html5shiv/3.7.0/html5shiv.js></script>
+                <script src="https://oss.maxcdn.cm/libs/responed.js//responed.min.js></script>
+            4.进入CSS3提供的媒体查询
+                <link rel="stylesheet" href="class5-变换和布局" media="screen and (max-width:480px)>
+                 对屏幕宽度限制，小于480px才能加载该样式表
+                    设备：
+                        all
+                        screen（pc显示器
+                        print（打印设备和预览图
+                        handheld（便携设备
+                        tv
+                        speech（音频合成器
+                        braille（盲人点触设备
+                        embossed（盲人打印机
+                        projection（投影设备
+                        tty（固定密度字母栅格设备
+
+                        only（用来排除不支持媒体查询的浏览器
+        方法二：
+            @media screen and（max-width：480px）{
+
+            }
+
+
+
+
+CSSweb字体
+    @font-face{
+        font-family
+        src:url("") format("")
+    }
+
+
+iconfont
+    引用提供的iconcss文件来提供各种不同icon标签
+
+*/

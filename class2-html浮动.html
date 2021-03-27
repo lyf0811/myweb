@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="class1.css"><!--外部方式-->
+<link rel="stylesheet" href="class2.css">
+<style>
+    .text{
+        font-size:10px;
+    }
+    .text span{
+        color:red;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Hello webstorm!</p>
+
+
+<div class="text">1234<span>56</span></div>
+
+<div class="whole">
+    <headscrupture>
+<div class="one">照片</div><!--左浮动--></headscrupture>
+<div class ="two">简介</div><!--右浮动-->
+    <<div class="clear">姓名</div><!--清除浮动,如果不清除浮动，及时是在whole这个div外面后续的块级元素也会接在后面，不会自动换行-->
+</div>
+<div >下</div><!--当在whole中定义overflow:hidden之后，在标签外就不受浮动影响了-->
+</body>
+</html>
